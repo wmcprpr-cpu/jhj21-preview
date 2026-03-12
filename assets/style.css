@@ -695,3 +695,23 @@ select {
     width: 100%;
   }
 } style.css야. ಪರಿಶட்டு
+.footer-title{
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.footer-label{
+  font-size:14px;
+  color: var(--muted);
+  margin-bottom:4px;
+}
+
+.footer-email{
+  color: var(--primary);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.footer-email:hover{
+  text-decoration:underline;
+}
