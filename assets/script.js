@@ -40,19 +40,33 @@ function bindMobileMenu() {
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
   });
 
   document.addEventListener("click", (event) => {
     if (!nav.classList.contains("is-open")) return;
     if (nav.contains(event.target) || toggle.contains(event.target)) return;
+
     nav.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "메뉴 열기");
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 920) {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "메뉴 열기");
+      }
+    });
   });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 920) {
       nav.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "메뉴 열기");
     }
   });
 }
@@ -60,6 +74,7 @@ function bindMobileMenu() {
 document.addEventListener("DOMContentLoaded", async () => {
   await loadPartial("site-header-placeholder", "assets/header.html");
   await loadPartial("site-footer-placeholder", "assets/footer.html");
+
   activateCurrentMenu();
   bindMobileMenu();
 });
