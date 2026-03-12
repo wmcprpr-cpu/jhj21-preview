@@ -253,9 +253,9 @@ button {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 24px;
-  align-items: center;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 28px;
+  align-items: stretch;
   padding: 52px;
 }
 
@@ -285,7 +285,7 @@ button {
 .hero h2 {
   margin: 0;
   font-size: clamp(42px, 5.2vw, 72px);
-  line-height: 1.08;
+  line-height: 1.06;
   letter-spacing: -0.055em;
   color: var(--primary);
 }
@@ -297,26 +297,27 @@ button {
 }
 
 .hero p {
-  margin: 24px 0 0;
+  margin: 22px 0 0;
   max-width: 760px;
   color: var(--muted);
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .hero__aside {
   display: grid;
-  gap: 16px;
+  gap: 14px;
+  align-content: stretch;
 }
 
 .hero-card {
-  padding: 24px;
+  padding: 20px;
   border-radius: 22px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.74);
@@ -332,8 +333,8 @@ button {
 
 .hero-card__title {
   margin: 0;
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 22px;
+  line-height: 1.18;
   letter-spacing: -0.03em;
   color: var(--primary);
 }
